@@ -1,0 +1,220 @@
+/* Base reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global typography */
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+  line-height: 1.5;
+}
+
+/* A4-like page container */
+.page {
+  width: 210mm;          /* A4 width */
+  min-height: 297mm;     /* A4 height */
+  margin: 10mm auto;
+  background: #f9fafb;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Header / top bar */
+.header {
+  background: #1d4ed8;
+  color: #ffffff;
+  padding: 24px 32px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.header h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.header-small {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px 16px;
+}
+
+.header-small span {
+  margin-right: 0;
+}
+
+/* Header links */
+.github-link,
+.linkedin-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.github-link:hover,
+.linkedin-link:hover {
+  text-decoration: underline;
+}
+
+/* Two-column layout */
+.content {
+  display: flex;
+  padding: 20px 24px 24px;
+  gap: 24px;
+}
+
+.left-col {
+  flex: 0 0 32%;
+  border-right: 1px solid #e5e7eb;
+  padding-right: 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-col {
+  flex: 1;
+  padding-left: 8px;
+}
+
+/* Section headings */
+h3.section-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1d4ed8;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 4px;
+}
+
+/* Text styles */
+.subheading {
+  display: block;
+  font-weight: 500;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  font-size: 13px;
+}
+
+.text-small {
+  font-size: 13px;
+  color: #000000;
+  line-height: 1.8;
+}
+
+/* Lists */
+ul {
+  list-style: disc;
+  padding-left: 18px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+li {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+/* Paragraphs */
+.tagline {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+/* Left column vertical spacing */
+.left-col .section {
+  margin-bottom: 30px;
+}
+
+.left-col .section:last-child {
+  margin-bottom: 0;
+}
+
+/* Project / item labels */
+.item-title {
+  font-weight: 500;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.item-sub {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.mini-title {
+  font-weight: 500;
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+/* Personal details block */
+.personal-row {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+/* Right column vertical spacing */
+.right-col .section {
+  margin-bottom: 22px;
+}
+
+.right-col .section:last-child {
+  margin-bottom: 0;
+}
+
+/* Bottom-left note link */
+.about-resume {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.about-text-link {
+  font-size: 12px;
+  color: #6b7280;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.about-text-link:hover {
+  color: #4b5563;
+  text-decoration: none;
+}
+
+/* Print: A4, same layout as screen (shadow off) */
+@media print {
+
+  @page {
+    size: A4;
+    margin: 10mm;   /* same approx margin as screen */
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .page {
+    width: 190mm;       /* thoda chhota taaki sure 1 page me aaye */
+    min-height: auto;
+    margin: 0 auto;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

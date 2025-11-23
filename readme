@@ -1,0 +1,24 @@
+## Frontend Developer Resume (HTML & CSS)
+-----------------------------------------
+This repository contains my **entry-level Frontend Developer resume**.  
+I have designed and coded this resume from scratch using **HTML** and **CSS** in **Visual Studio Code**.
+The main goal of this project is to show my skills in creating a clean, responsive layout without using any template.
+
+---
+
+## 🛠 Technologies Used
+-----------------------
+- **HTML5**
+- **CSS3**
+- **Flexbox** for layout
+- **Google Fonts** (Roboto)
+- (Skills section also mentions **Bootstrap** and **JavaScript**, used in my other projects)
+
+---
+
+## 📂 Project Structure
+------------------------
+|
+├── resume.html   # Main resume file
+├── resume.css    # Styling for the resume
+└── README.md     # Project description
