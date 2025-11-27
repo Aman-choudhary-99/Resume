@@ -1,30 +1,24 @@
-/* Base reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Global typography */
 body {
   font-family: "Roboto", Arial, sans-serif;
-  background: #f3f4f6;
   color: #111827;
   line-height: 1.5;
 }
 
-/* A4-like page container */
 .page {
-  width: 210mm;          /* A4 width */
-  min-height: 297mm;     /* A4 height */
+  width: 210mm;
+  min-height: 297mm;
   margin: 10mm auto;
   background: #f9fafb;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   overflow: hidden;
 }
 
-/* Header / top bar */
 .header {
   background: #1d4ed8;
   color: #ffffff;
@@ -35,6 +29,8 @@ body {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
 }
 
 .header h2 {
@@ -57,9 +53,9 @@ body {
   margin-right: 0;
 }
 
-/* Header links */
 .github-link,
-.linkedin-link {
+.linkedin-link,
+.email-link {
   color: #ffffff;
   text-decoration: none;
 }
@@ -69,7 +65,6 @@ body {
   text-decoration: underline;
 }
 
-/* Two-column layout */
 .content {
   display: flex;
   padding: 20px 24px 24px;
@@ -89,7 +84,6 @@ body {
   padding-left: 8px;
 }
 
-/* Section headings */
 h3.section-title {
   font-size: 14px;
   text-transform: uppercase;
@@ -100,7 +94,6 @@ h3.section-title {
   padding-bottom: 4px;
 }
 
-/* Text styles */
 .subheading {
   display: block;
   font-weight: 500;
@@ -115,12 +108,10 @@ h3.section-title {
   line-height: 1.8;
 }
 
-/* Lists */
 ul {
   list-style: disc;
   padding-left: 18px;
   margin-top: 4px;
-  margin-bottom: 6px;
 }
 
 li {
@@ -128,13 +119,11 @@ li {
   margin-bottom: 4px;
 }
 
-/* Paragraphs */
 .tagline {
   font-size: 13px;
   margin-bottom: 6px;
 }
 
-/* Left column vertical spacing */
 .left-col .section {
   margin-bottom: 30px;
 }
@@ -143,7 +132,6 @@ li {
   margin-bottom: 0;
 }
 
-/* Project / item labels */
 .item-title {
   font-weight: 500;
   font-size: 13px;
@@ -163,14 +151,12 @@ li {
   margin-bottom: 0;
 }
 
-/* Personal details block */
 .personal-row {
   font-size: 13px;
   line-height: 1.6;
   margin-bottom: 4px;
 }
 
-/* Right column vertical spacing */
 .right-col .section {
   margin-bottom: 22px;
 }
@@ -179,42 +165,104 @@ li {
   margin-bottom: 0;
 }
 
-/* Bottom-left note link */
-.about-resume {
-  margin-top: auto;
-  padding-top: 8px;
-  border-top: 1px solid #e5e7eb;
-}
-
-.about-text-link {
+.project-link-0,
+.project-link-1,
+.project-link-2 {
+  color: #1d4ed8;
+  text-decoration: none;
   font-size: 12px;
-  color: #6b7280;
-  text-decoration: none;
-  display: inline-block;
+  font-weight: 400;
 }
 
-.about-text-link:hover {
-  color: #4b5563;
-  text-decoration: none;
+.project-link-0 {
+  margin-left: 75px;
 }
 
-/* Print: A4, same layout as screen (shadow off) */
-@media print {
+.project-link-1 {
+  margin-left: 60px;
+}
 
-  @page {
-    size: A4;
-    margin: 10mm;   /* same approx margin as screen */
-  }
+.project-link-2 {
+  margin-left: 115px;
+}
 
-  body {
-    background: #ffffff;
-  }
+.project-link-0:hover,
+.project-link-1:hover,
+.project-link-2:hover {
+  text-decoration: underline;
+}
 
-  .page {
-    width: 190mm;       /* thoda chhota taaki sure 1 page me aaye */
-    min-height: auto;
-    margin: 0 auto;
-    border-radius: 0;
-    box-shadow: none;
-  }
+.link-icon {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.mini-link-icon-0,
+.mini-link-icon-1,
+.mini-link-icon-2,
+.mini-link-icon-3 {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+
+.mini-link-icon-0 {
+  margin-left: 134px;
+}
+
+.mini-link-icon-1 {
+  margin-left: 123px;
+}
+
+.mini-link-icon-2 {
+  margin-left: 61px;
+}
+
+.mini-link-icon-3 {
+  margin-left: 22px;
+}
+
+.project-list {
+  margin-bottom: -5px;
+}
+
+.projects-1 {
+  margin-bottom: 10px;
+}
+
+.mini-project-link {
+  color: #1d4ed8;
+  text-decoration: none;
+  font-size: 12px;
+  margin-left: 1rem;
+  font-weight: 400;
+}
+
+.mini-project-link:hover {
+  text-decoration: underline;
+}
+
+.header-link {
+  height: 25px;
+}
+
+/* naam ke baad pehla icon group ko right push kare */
+.header h1 a:first-of-type {
+  margin-left: auto;
+}
+
+/* har icon ke beech gap */
+.header h1 a + a {
+  margin-left: 12px; /* 10–20 jo chahe change kar sakta hai */
+}
+
+/* header ke icon links pe underline / purple off */
+.header h1 a,
+.header h1 a:visited,
+.header h1 a:hover,
+.header h1 a:active {
+  text-decoration: none;
+  color: inherit;
 }
