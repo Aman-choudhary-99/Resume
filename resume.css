@@ -1,268 +1,200 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   color: #111827;
-  line-height: 1.5;
+    background: radial-gradient(
+    circle at top left,
+    #e0f2fe 0%,
+    #c7d2fe 30%,
+    #f5d0fe 65%,
+    #fee2e2 100%
+  );
 }
 
-.page {
-  width: 210mm;
-  min-height: 297mm;
-  margin: 10mm auto;
-  background: #f9fafb;
-  border-radius: 8px;
-  overflow: hidden;
+/* General spacing */
+.section-padding {
+  padding: 60px 0;
 }
 
-.header {
-  background: #1d4ed8;
-  color: #ffffff;
-  padding: 24px 32px;
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  position: relative;
 }
 
-.header h1 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 4px;
-  display: flex;
-  align-items: center;
-}
-
-.header h2 {
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.header-small {
-  margin-top: 10px;
-  font-size: 13px;
-  line-height: 1.6;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 4px 16px;
-}
-
-.header-small span {
-  margin-right: 0;
-}
-
-.github-link,
-.linkedin-link,
-.email-link {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.github-link:hover,
-.linkedin-link:hover {
-  text-decoration: underline;
-}
-
-.content {
-  display: flex;
-  padding: 20px 24px 24px;
-  gap: 24px;
-}
-
-.left-col {
-  flex: 0 0 32%;
-  border-right: 1px solid #e5e7eb;
-  padding-right: 36px;
-  display: flex;
-  flex-direction: column;
-}
-
-.right-col {
-  flex: 1;
-  padding-left: 8px;
-}
-
-h3.section-title {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #1d4ed8;
-  margin-bottom: 8px;
-  border-bottom: 1px solid #e5e7eb;
-  padding-bottom: 4px;
-}
-
-.subheading {
+.section-title::after {
+  content: "";
   display: block;
-  font-weight: 500;
-  margin-top: 8px;
-  margin-bottom: 2px;
-  font-size: 13px;
+  width: 48px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 999px;
+  margin-top: 6px;
 }
 
-.text-small {
-  font-size: 13px;
-  color: #000000;
-  line-height: 1.8;
+/* Navbar */
+.navbar-brand {
+  font-weight: 600; 
 }
 
-ul {
-  list-style: disc;
-  padding-left: 18px;
-  margin-top: 4px;
+/* Hero section */
+.hero-section {
+  padding: 72px 0 60px;
+  background: radial-gradient(
+    circle at top left,
+    #e0f2fe 0%,
+    #c7d2fe 30%,
+    #f5d0fe 65%,
+    #fee2e2 100%
+  );
+  color: #0b1120;
 }
 
-li {
-  font-size: 13px;
-  margin-bottom: 4px;
+.hero-tag {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: #1d4ed8;
+  font-weight: 600;
 }
 
-.tagline {
-  font-size: 13px;
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 0.98rem;
+  max-width: 600px;
+}
+
+/* White card on hero right side */
+.hero-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  font-size: 0.9rem;
+}
+
+/* About section */
+.about-list li {
   margin-bottom: 6px;
+  font-size: 0.95rem;
 }
 
-.left-col .section {
-  margin-bottom: 30px;
-}
-
-.left-col .section:last-child {
-  margin-bottom: 0;
-}
-
-.item-title {
+/* Skills */
+.skill-badges .badge {
+  margin: 2px 4px 4px 0;
   font-weight: 500;
-  font-size: 13px;
-  margin-bottom: 2px;
+  border: 2px solid currentColor;
+}
+.skill-badges .badge:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
-.item-sub {
-  font-size: 12px;
-  color: #6b7280;
-  margin-bottom: 4px;
+/* Contact */
+.contact-list li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
 }
 
-.mini-title {
-  font-weight: 500;
-  font-size: 13px;
-  margin-top: 4px;
-  margin-bottom: 0;
-}
-
-.personal-row {
-  font-size: 13px;
-  line-height: 1.6;
-  margin-bottom: 4px;
-}
-
-.right-col .section {
-  margin-bottom: 22px;
-}
-
-.right-col .section:last-child {
-  margin-bottom: 0;
-}
-
-.project-link-0,
-.project-link-1,
-.project-link-2 {
+.contact-list a {
   color: #1d4ed8;
   text-decoration: none;
-  font-size: 12px;
-  font-weight: 400;
 }
 
-.project-link-0 {
-  margin-left: 75px;
-}
-
-.project-link-1 {
-  margin-left: 60px;
-}
-
-.project-link-2 {
-  margin-left: 115px;
-}
-
-.project-link-0:hover,
-.project-link-1:hover,
-.project-link-2:hover {
+.contact-list a:hover {
   text-decoration: underline;
 }
 
-.link-icon {
-  width: 14px;
-  height: 14px;
-  vertical-align: middle;
-  margin-left: 4px;
+/* Cards */
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-.mini-link-icon-0,
-.mini-link-icon-1,
-.mini-link-icon-2,
-.mini-link-icon-3 {
-  width: 14px;
-  height: 14px;
-  vertical-align: middle;
+.card-subtitle {
+  font-size: 0.86rem;
 }
 
-.mini-link-icon-0 {
-  margin-left: 134px;
+/* Small form info */
+.contact-form .form-label {
+  font-size: 0.9rem;
 }
 
-.mini-link-icon-1 {
-  margin-left: 123px;
+/* Make hero nicer on small screens */
+@media (max-width: 767.98px) {
+  .hero-section {
+    padding-top: 56px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+}   
+
+/* ==== Section backgrounds with gradients ==== */
+
+/* About – light blue/purple */
+#about {
+  background: radial-gradient(
+    circle at top right,
+    #eef2ff 0%,
+    #e0f2fe 40%,
+    #fdf2ff 100%
+  );
 }
 
-.mini-link-icon-2 {
-  margin-left: 61px;
+/* Skills – thoda green + blue mix */
+#skills {
+  background: radial-gradient(
+    circle at bottom left,
+    #dcfce7 0%,   /* light green */
+    #e0f2fe 40%,  /* soft blue */
+    #fdf2ff 100%  /* very light purple */
+  );
 }
 
-.mini-link-icon-3 {
-  margin-left: 22px;
+/* Projects – strong gradient */
+#projects {
+  background: radial-gradient(
+    circle at top left,
+    #e0f2fe 0%,
+    #c7d2fe 30%,
+    #f5d0fe 65%,
+    #fee2e2 100%
+  );
 }
 
-.project-list {
-  margin-bottom: -5px;
+/* Contact – pink + yellow tone */
+#contact {
+  background: radial-gradient(
+    circle at bottom right,
+    #fee2e2 0%, 
+    #fef9c3 40%, 
+    #ecfeff 100% 
+  );
 }
 
-.projects-1 {
-  margin-bottom: 10px;
+::-webkit-scrollbar{
+    width:10px;
+    background-color:white;
 }
 
-.mini-project-link {
-  color: #1d4ed8;
-  text-decoration: none;
-  font-size: 12px;
-  margin-left: 1rem;
-  font-weight: 400;
+::-webkit-scrollbar-thumb{
+      background: radial-gradient(circle at top left,#e0f2fe 0%,#c7d2fe 30%,#f5d0fe 65%,#fee2e2 100%);
+      border: 2px solid white;
 }
 
-.mini-project-link:hover {
-  text-decoration: underline;
-}
-
-.header-link {
-  height: 25px;
-}
-
-/* naam ke baad pehla icon group ko right push kare */
-.header h1 a:first-of-type {
-  margin-left: auto;
-}
-
-/* har icon ke beech gap */
-.header h1 a + a {
-  margin-left: 12px; /* 10–20 jo chahe change kar sakta hai */
-}
-
-/* header ke icon links pe underline / purple off */
-.header h1 a,
-.header h1 a:visited,
-.header h1 a:hover,
-.header h1 a:active {
-  text-decoration: none;
-  color: inherit;
+.navbar-light .navbar-nav .nav-link{
+    color: #234c6a;
 }
